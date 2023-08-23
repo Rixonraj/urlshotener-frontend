@@ -10,7 +10,7 @@ function GoTo() {
     axios.put(`${process.env.REACT_APP_BACKENDURL}/goto/${param.id}`).then((docs) => {
       if (docs.data.message == "Success redirect") {
         window.open(docs.data.urldoc.actualurl)
-        window.close() //FOR AUTO CLOSE
+        // window.close() //FOR AUTO CLOSE
       } else {
         window.alert(docs.data.urldoc.message)
       }
