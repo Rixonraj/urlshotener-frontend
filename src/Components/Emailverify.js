@@ -11,6 +11,7 @@ function Emailverify() {
     useEffect(() => {
         try {
             const values = { emailToken: searchParams.get("emailToken") }
+            console.log("values:",values,"params",params.id)
             axios.put(`${process.env.REACT_APP_BACKENDURL}/emailVerification/${params.id}?${createSearchParams(values)}`).then((transaction) => {
                 if (transaction.data.message === 'Email Verified!') {
                     alert("Email Verified!" )
