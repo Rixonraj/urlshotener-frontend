@@ -9,8 +9,8 @@ function Emailverify() {
     const [searchParams] = useSearchParams();
     // searchParams.get("emailToken")
     useEffect(() => {
-        console.log("values:",values,"params",params.id)
-        console.log("process.env.REACT_APP_BACKENDURL",process.env.REACT_APP_BACKENDURL)
+        // console.log("values:",values,"params",params.id)
+        // console.log("process.env.REACT_APP_BACKENDURL",process.env.REACT_APP_BACKENDURL)
         try {
             const values = { emailToken: searchParams.get("emailToken") }
             axios.put(`${process.env.REACT_APP_BACKENDURL}/emailVerification/${params.id}?${createSearchParams(values)}`).then((transaction) => {
